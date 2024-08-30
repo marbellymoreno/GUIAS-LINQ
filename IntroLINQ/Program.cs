@@ -2,7 +2,7 @@
 using IntroLINQ;
 
 #region Introduccion 
-/*string[]palabras;
+string[]palabras;
 palabras = new string[] { "gato", "perro", "lagarto", "tortuga", "cocdrilo","serpiente", "123456789" };
 Console.WriteLine("Mas de 5 letras");
 
@@ -16,15 +16,13 @@ foreach (string str in palabras) {
 
 foreach (var r in resultado) 
     Console.WriteLine(r);
-*/
 #endregion
 #region utilizando Linq
-/*Console.WriteLine("-----------------------------------------------------");    
+Console.WriteLine("-----------------------------------------------------");    
 IEnumerable<string> list = from r in palabras where r.Length > 8 select r;
 foreach(var listado in list)
     Console.WriteLine(listado);
 Console.WriteLine("-----------------------------------------------------");
-*/
 #endregion
 #region ListaModelos
 List<Casa> ListaCasas = new List<Casa>();
@@ -111,7 +109,7 @@ ListaHabitantes.Add(new Habitante
 });
 #endregion
 #region SentenciasLinQ
-/*
+
 IEnumerable<Habitante> ListaEdad = from ObjetoProvicional
                                    in ListaHabitantes
                                    where ObjetoProvicional.Edad > 40
@@ -132,10 +130,10 @@ Console.WriteLine("-------------------------------------------------------------
 foreach (Habitante h in listaCasaGothan) {
     Console.WriteLine (h.datosHabitante());
 }
-*/
+
 #endregion
 #region FirsthAndFirsthOrDefault
-/* Console.WriteLine("----------------------------------------------------------------------------------------------");
+Console.WriteLine("----------------------------------------------------------------------------------------------");
 var primeraCasa = ListaCasas.First(); //esto no es linQ es  una fucnin de los Ienumarable
 Console.WriteLine(primeraCasa.dameDatosCasa());
 
@@ -157,10 +155,10 @@ if (CasaConFirsthOrDedault == null ) {
     return;
 }
 Console.WriteLine("existe !Si existe!");
-*/
+
 #endregion
 #region Last
-/*Casa ultimaCasa = ListaCasas.Last(temp => temp.Id>1);
+Casa ultimaCasa = ListaCasas.Last(temp => temp.Id>1);
 Console.WriteLine(ultimaCasa.dameDatosCasa());
 Console.WriteLine("_____________________________________________________");
 var h1 = (from objHabitante in ListaHabitantes where objHabitante.Edad > 60 select objHabitante)
@@ -170,10 +168,10 @@ if (h1 == null) {
 return;
 }
 Console.WriteLine(h1.datosHabitante());
-*/
+
 #endregion
 #region ElementAt
-/*var terceraCasa = ListaCasas.ElementAt(2);
+var terceraCasa = ListaCasas.ElementAt(2);
 Console.WriteLine($"La tercera casa es {terceraCasa.dameDatosCasa()}");
 
 var casaError = ListaCasas.ElementAtOrDefault(3);
@@ -181,10 +179,10 @@ if ( casaError != null) { Console.WriteLine($"La tercera casa es {casaError.dame
 
 var segundoHabitante = (from objetoTem in ListaHabitantes select objetoTem).ElementAtOrDefault(2);
 Console.WriteLine($" segundo habitante es : {segundoHabitante.datosHabitante()}");
-*/
+
 #endregion
 #region single
-/*
+
 try {
     var habitantes = ListaHabitantes.Single(variableTem => variableTem.Edad > 40 && variableTem.Edad <70);
     // Creando esta consulta pero con LinQ
@@ -196,28 +194,26 @@ try {
 catch (Exception) {
     Console.WriteLine($"Ocurrio el error");
 }
-*/
+
 #endregion
 #region typeOf
-/* var listaEmpleados = new List<Empleado>() { 
+var listaEmpleados = new List<Empleado>() { 
     new Medico(){ nombre= "Jorge Casa" },
     new Enfermero(){ nombre = "Raul Blanco"}
 };
 
 var medico = listaEmpleados.OfType<Medico>();
 Console.WriteLine(medico.Single().nombre);
-*/
 #endregion
 #region OrderBy
-/*var edadA = ListaHabitantes.OrderBy(x => x.Edad);
+var edadA = ListaHabitantes.OrderBy(x => x.Edad);
 var edadAC = from vt in ListaHabitantes orderby vt.Edad select vt;
 foreach (var edad in edadAC) { 
     Console.WriteLine(edad.datosHabitante());
 }
-*/
 #endregion
 #region OrderBYDescending()
-/* var listaEdad = ListaHabitantes.OrderByDescending(x => x.Edad);
+var listaEdad = ListaHabitantes.OrderByDescending(x => x.Edad);
 foreach (Habitante h in listaEdad) { 
     Console.WriteLine(h.datosHabitante());
 }
@@ -227,12 +223,10 @@ foreach (Habitante h in ListaEdad2)
 {
     Console.WriteLine(h.datosHabitante());
 }
-*/
+
 #endregion
 #region ThenBy
-//var habitantes3 = ListaHabitantes.OrderBy(x => x.Edad).ThenBy(x => x.Nombre);
-
-
+var habitantes3 = ListaHabitantes.OrderBy(x => x.Edad).ThenBy(x => x.Nombre);
 
 var edadATA = from h in ListaHabitantes orderby h.Edad, h.Nombre descending select h;
 
@@ -243,7 +237,9 @@ foreach (var h in edadATA)
 
 Console.WriteLine("------------------");
 
-//var habitantes4 = ListaHabitantes.OrderBy(x => x.Edad).ThenByDescending(x => x.Nombre);
+#endregion
+#region ThenByDescending
+var habitantes4 = ListaHabitantes.OrderBy(x => x.Edad).ThenByDescending(x => x.Nombre);
 
 var lista4 = from h in ListaHabitantes orderby h.Edad, h.Nombre ascending select h;
 
@@ -251,5 +247,4 @@ foreach (var h in lista4)
 {
     Console.WriteLine(h.datosHabitante());
 }
-
 #endregion

@@ -8,15 +8,15 @@ using System.Threading.Tasks;
 namespace IntroLINQ
 {
     public class Casa
-    {      
+    {
         public int Id { get; set; }
         public string Direccion { get; set; }
         public string Ciudad { get; set; }
         public int numeroHabitaciones { get; set; }
-
-        public string datosCasa()
+        public string dameDatosCasa()
         {
-            return $"La direccion es {Direccion}, en la ciudad{Ciudad}";
+
+            return $"Direcion es {Direccion} en la ciudad de {Ciudad} con numero de habitaciones {numeroHabitaciones}";
         }
     }
 }
