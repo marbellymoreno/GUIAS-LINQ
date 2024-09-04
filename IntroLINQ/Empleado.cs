@@ -8,7 +8,7 @@ namespace IntroLINQ
 {
     public class Empleado
     {
+        // Nombre del empleado
         public string nombre { get; set; }
-
     }
 }

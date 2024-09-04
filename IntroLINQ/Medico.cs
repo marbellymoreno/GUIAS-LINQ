@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 
 namespace IntroLINQ
 {
+    // Clase Medico que hereda de Empleado
     public class Medico : Empleado
     {
-        public string nombre { get; set; }
-
+        // Nombre del médico
+        public new string nombre { get; set; }
     }
 }

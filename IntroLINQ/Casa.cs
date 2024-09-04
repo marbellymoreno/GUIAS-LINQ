@@ -9,14 +9,22 @@ namespace IntroLINQ
 {
     public class Casa
     {
+        // ID de la casa
         public int Id { get; set; }
+
+        // Dirección de la casa
         public string Direccion { get; set; }
+
+        // Ciudad donde está ubicada la casa
         public string Ciudad { get; set; }
+
+        // Número de habitaciones de la casa
         public int numeroHabitaciones { get; set; }
+
+        // Método que devuelve los datos de la casa como una cadena
         public string dameDatosCasa()
         {
-
-            return $"Direcion es {Direccion} en la ciudad de {Ciudad} con numero de habitaciones {numeroHabitaciones}";
+            return $"Dirección es {Direccion} en la ciudad de {Ciudad} con número de habitaciones {numeroHabitaciones}";
         }
     }
 }
